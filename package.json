@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "start": "sirv public"
+    "start": "sirv public --port 5555"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/Steakeye/fcm-poc#readme",
   "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "rollup": "^2.53.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
     "sirv-cli": "^1.0.12"
   }
 }

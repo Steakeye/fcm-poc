@@ -1,0 +1,10 @@
+{
+  "apiKey": "AIzaSyCv8kZWZTaG0ONkPIonaA7by-BXTlsLBNo",
+  "authDomain": "teamhub-app.firebaseapp.com",
+  "databaseURL": "https://teamhub-app.firebaseio.com",
+  "projectId": "teamhub-app",
+  "storageBucket": "teamhub-app.appspot.com",
+  "messagingSenderId": "315589394290",
+  "appId": "1:315589394290:web:41b934b558bcdb12c6a7eb",
+  "vapidKey": "BCnpI8ppl_FO0jmx6242voZ_W8mTe_9AAmPDc_UlsXc-dwKqZu5RjFkd86caNFZ9TmHqV-XXqmZlzo3Pk6VFM1c"
+}
