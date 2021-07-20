@@ -1,0 +1,25 @@
+{
+  "name": "fcm-poc",
+  "version": "1.0.0",
+  "description": "Firebase Cloud Messaging Proof of Concept",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "start": "sirv public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Steakeye/fcm-poc.git"
+  },
+  "author": "Andrew Keats",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/Steakeye/fcm-poc/issues"
+  },
+  "homepage": "https://github.com/Steakeye/fcm-poc#readme",
+  "devDependencies": {
+    "rollup": "^2.53.2",
+    "sirv-cli": "^1.0.12"
+  }
+}
