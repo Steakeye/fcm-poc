@@ -1,6 +1,7 @@
 import del from 'rollup-plugin-delete';
 import copy from 'rollup-plugin-copy';
 import json from '@rollup/plugin-json';
+import resolve from '@rollup/plugin-node-resolve';
 
 export default [{
     input: { index: `src/index.js`, sw: `src/serviceWorker.js` },
@@ -17,6 +18,10 @@ export default [{
         }),
         copy({
             targets: [{ src: `src/index.html`, dest: `public` }],
+        }),
+        resolve({
+            browser: true,
+            extensions: [`.js`, `.json`],
         }),
         json(),
     ],
