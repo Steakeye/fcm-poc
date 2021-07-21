@@ -1,5 +1,5 @@
-import firebase from "firebase";
-import 'firebase/messaging';
+import firebase from "firebase/app";
+import '@firebase/messaging';
 import firebaseConfig from './firebase.config.json';
 
 console.log('logging serviceWorker.js');
@@ -10,3 +10,9 @@ const { vapidKey, ...firebaseInitOptions } = firebaseConfig;
 firebase.initializeApp(firebaseInitOptions);
 
 const messaging = firebase.messaging();
+
+/*const pushToken = await messaging.getToken({ vapidKey });
+
+console.log(`pushToken`, pushToken)
+
+localStorage.setItem(`pushToken`, pushToken);*/
