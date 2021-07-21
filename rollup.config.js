@@ -5,10 +5,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default [{
-    input: { index: `src/main.js`, sw: `src/serviceWorker.js` },
+    input: `src/main.js`,
     output: {
-        format: `es`,
-        entryFileNames: `assets/js/[name].js`,
+        format: `iife`,
+        entryFileNames: `assets/js/index.js`,
         dir: `public`,
         exports: `none`, // as we're an app, no exposing anything from a module
     },
@@ -20,6 +20,23 @@ export default [{
         copy({
             targets: [{ src: `src/index.html`, dest: `public` }],
         }),
+        resolve({
+            browser: true,
+            extensions: [`.js`, `.json`],
+        }),
+        json(),
+        commonjs(),
+    ],
+},
+{
+    input: `src/serviceWorker.js`,
+    output: {
+        format: `iife`,
+        entryFileNames: `assets/js/sw.js`,
+        dir: `public`,
+        exports: `none`, // as we're an app, no exposing anything from a module
+    },
+    plugins: [
         resolve({
             browser: true,
             extensions: [`.js`, `.json`],

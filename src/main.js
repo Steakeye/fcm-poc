@@ -1,3 +1,7 @@
+import firebase from "firebase/app";
+import '@firebase/messaging';
+import firebaseConfig from './firebase.config.json';
+
 console.log('logging main.js');
 
 if (`serviceWorker` in navigator) {
@@ -38,3 +42,15 @@ if (`serviceWorker` in navigator) {
         }
     });
 }
+
+
+const { vapidKey, ...firebaseInitOptions } = firebaseConfig;
+
+firebase.initializeApp(firebaseInitOptions);
+
+const messaging = firebase.messaging();
+
+messaging.onMessage((event) => {
+    console.log(`messaging.onMessage`, event);
+    new Notification(`foreground notification!`);
+});
