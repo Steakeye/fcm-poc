@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "start": "serve public --listen 5555"
+    "start": "serve public --listen 5555 --config ../serve.json"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Steakeye/fcm-poc#readme",
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.2",
     "firebase": "^8.7.1",
     "rollup": "^2.53.2",
     "rollup-plugin-copy": "^3.4.0",
