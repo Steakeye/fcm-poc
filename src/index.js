@@ -7,7 +7,7 @@ if (`serviceWorker` in navigator) {
         let existingServiceWorker;
 
         try {
-            const serviceWorkerRegistration = await serviceWorkerContainer.register(`/assets/js/gldc-sw.js`, {
+            const serviceWorkerRegistration = await serviceWorkerContainer.register(`/assets/js/sw.js`, {
                 scope: `/`,
             });
             const { active } = serviceWorkerRegistration;
@@ -22,7 +22,7 @@ if (`serviceWorker` in navigator) {
         if (existingServiceWorker) {
             existingServiceWorker.postMessage({
                 type: `notification:permission`,
-                value: permissionsUpdate,
+                value: Notification.permission === `granted`,
             });
         }
     });
