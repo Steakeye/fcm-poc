@@ -1,10 +1,12 @@
-console.log('logging index.js');
+console.log('logging main.js');
 
 if (`serviceWorker` in navigator) {
     // Use the window load event to keep the page load performant
     window.addEventListener(`load`, async () => {
         const {serviceWorker: serviceWorkerContainer} = navigator;
         let existingServiceWorker;
+
+        await Notification.requestPermission();
 
         try {
             const serviceWorkerRegistration = await serviceWorkerContainer.register(`/assets/js/sw.js`, {

@@ -5,7 +5,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default [{
-    input: { index: `src/index.js`, sw: `src/serviceWorker.js` },
+    input: { index: `src/main.js`, sw: `src/serviceWorker.js` },
     output: {
         format: `es`,
         entryFileNames: `assets/js/[name].js`,
