@@ -28,4 +28,13 @@ if (`serviceWorker` in navigator) {
             });
         }
     });
+
+    navigator.serviceWorker.addEventListener(`message`, ({ data }) => {
+        const { type, value } = data;
+
+        if (type === 'pushToken') {
+            console.log(`pushToken message received`);
+            localStorage.setItem('pushToken', value);
+        }
+    });
 }

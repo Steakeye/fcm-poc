@@ -27,7 +27,6 @@ async function attemptToGetToken() {
 
     try {
         // `getToken` cannot set a service worker via `serviceWorkerRegistration` from within a service worker!
-        // token = await messaging.getToken({ vapidKey, serviceWorkerRegistration: registration });
         token = await messaging.getToken({ vapidKey });
     } catch (error) {
         console.error(`Getting messaging token failed`, error);
@@ -36,10 +35,12 @@ async function attemptToGetToken() {
 
         const client = await getClient();
 
-        postMessageToClient(client, {
-            type: 'pushToken',
-            value: token,
-        })
+        if (client) {
+            postMessageToClient(client, {
+                type: 'pushToken',
+                value: token,
+            })
+        }
     }
 }
 
